@@ -10,8 +10,8 @@ const routes =[
         component:() => import('@/views/LoginPage.vue')
     },
     {
-        path: '/',
-        component:() => import('@/views/LoginPage.vue')
+        path: '/index',
+        component:() => import('@/views/IndexPage.vue')
     }
 ]
 
@@ -21,7 +21,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to,from,next) =>{
-    if(to.href === '/login' || to.href === 'register'){
+    if(to.href === '/login' || to.href === '/register' || to.href === '/index'){
         next()
     }else {
         if (to.href != '/login' && getItem("TOKEN_INFO_KEY") === null) {

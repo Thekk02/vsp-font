@@ -6,6 +6,6 @@ import request from "@/utils/request";
 
 
 export const login = (data) => {
-    return request.post('/vsp/login',data)
+    return request.post('/login',data)
 }
 
