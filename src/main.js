@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from "@/router/router";
 import store from "@/store/store";
 import request from "@/utils/request";
-import {authShow} from "@/utils/authtil";
+import {authShow} from "@/utils/authutil";
 import 'element-plus/dist/index.css'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import ElementPlus from "element-plus";

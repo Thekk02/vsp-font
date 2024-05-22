@@ -5,7 +5,7 @@ import router from "@/router/router";
 // import {getItem} from './storage'
 
 const request = axios.create({
-    baseURL: '/vsp',
+    baseURL: '/api',
 })
 
 
