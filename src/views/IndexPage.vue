@@ -32,9 +32,16 @@
           </el-menu>
         </el-aside>
         <el-main >
-          <el-button icon="Position" class="index-main-plm-app1" @click="plmorderinqueryHandler  ">
-            订单导出
-          </el-button>
+          <div>
+            <el-button  class="index-main-plm-app1" @click="plmorderinqueryHandler   ">
+              <div class="index-main-plm-app1-icon">
+                <el-icon>
+                  <Position/>
+                </el-icon>
+              </div>
+           订单导出
+            </el-button>
+          </div>
         </el-main>
       </el-container>
     </el-container>
@@ -76,23 +83,23 @@
   height:160px;
   float:left;
   background-color: #24CFEB;
-  font-size: 20px;
+  font-size: 30px;
+  display:flex;
   text-align: center;
-  align-items: end;
+  align-items: center;
+
+  .index-main-plm-app1-icon{
+    font-size: 30px;
+  }
 
 }
 
-
-
 </style>
-
-
 
 <script >
 
-import {Monitor, OfficeBuilding, Setting, Camera, Compass, Location} from "@element-plus/icons-vue";
+import {Monitor, OfficeBuilding, Setting, Camera, Compass, Location, Position} from "@element-plus/icons-vue";
 import router from "@/router/router";
-
 
 
 export default {
@@ -100,10 +107,10 @@ export default {
   computed:{},
   setup(){},
   data(){},
-  components:{ Monitor, OfficeBuilding, Setting,Camera,Compass,Location},
+  components:{Position, Monitor, OfficeBuilding, Setting,Camera,Compass,Location},
   methods:{
     plmorderinqueryHandler(){
-      router.push( '/plmapp1')
+      router.push( '/RadiatorOrderInquiry')
     }
   },
 }

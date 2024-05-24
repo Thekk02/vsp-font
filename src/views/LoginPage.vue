@@ -49,7 +49,7 @@
 
 <script>
 import {login} from "@/api/api";
-import {useStore} from 'vuex'
+// import {useStore} from 'vuex'
 import router from "@/router/router.js";
 import {User,Lock,View} from "@element-plus/icons-vue";
 import md5 from 'js-md5';
@@ -68,9 +68,9 @@ export default {
     }
   },
   setup() {
-    return {
-      store: useStore()
-    }
+    // return {
+    //   store: useStore()
+    // }
   },
 
   data() {

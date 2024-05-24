@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ElNotification } from 'element-plus'
-import {getItem} from "@/utils/storage/";
+// import {getItem} from "@/utils/storage/";
 import router from "@/router/router";
 // import {getItem} from './storage'
 
@@ -42,15 +42,15 @@ request.interceptors.response.use(
         return Promise.reject(error);
     }
 );
-request.interceptors.request.use((config)=>{
-    if (getItem('TOKEN_INFO_KEY')!=null){
-        config.headers.Authorization=getItem('TOKEN_INFO_KEY').token
-    }
-    return config
-},(error)=>{
-
-    return Promise.reject(error)
-})
+// request.interceptors.request.use((config)=>{
+//     if (getItem('TOKEN_INFO_KEY')!=null){
+//         config.headers.Authorization=getItem('TOKEN_INFO_KEY').token
+//     }
+//     return config
+// },(error)=>{
+//
+//     return Promise.reject(error)
+// })
 
 
 

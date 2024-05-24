@@ -15,9 +15,9 @@ const routes =[
         component:() => import('@/views/IndexPage.vue')
     },
     {
-        path: '/plmapp1',
-        name: '/plmapp1',
-        component:() => import("@/views/plm/OrderInquiry.vue")
+        path: '/RadiatorOrderInquiry',
+        name: '/RadiatorOrderInquiry',
+        component:() => import("@/views/radiator/RadiatorOrderInquiry.vue")
     }
 ]
 
@@ -27,7 +27,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to,from,next) =>{
-    if(to.href === '/login' || to.href === '/register' || to.href === '/index' || to.href === '/plmapp1'){
+    if(to.href === '/login' || to.href === '/register' || to.href === '/index' || to.href === '/RadiatorOrderInquiry'){
         next()
     }else {
         if (to.href != '/login' && getItem("TOKEN_INFO_KEY") === null) {
