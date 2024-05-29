@@ -10,7 +10,9 @@ import ElementPlus from "element-plus";
 import * as echarts from "echarts";
 import './style/global.css'
 
+
 const app = createApp(App);
+
 
 app.use(ElementPlus, {
     locale: zhCn,

@@ -46,7 +46,8 @@
           </div>
           <div class="plm-orderinquery-queryresult">
             <el-table :data = "list" border height="770" id="inqueryresults"
-                       :cell-style="{padding:'20px 0'}" >
+                       :cell-style="{padding:'20px 0'}" @row-click="testhandler"
+                        :cell-class-name="tableRowClassName">
               <el-table-column prop="orderId" label="销售订单号" width="100" >
               </el-table-column>
               <el-table-column prop="lineNumber" label="行号" width="80">
@@ -111,6 +112,7 @@
 import * as XLSX from "xlsx";
 import * as  FileSaver  from "file-saver";
 import {RadiatorOrderInquiry} from "@/api/api";
+import { ElMessageBox } from 'element-plus';
 // import {useStore} from "vuex";
 
 
@@ -135,8 +137,10 @@ export default {
   components: {},
   methods: {
     inqueryhandler(){
-      // let data = this.$data.radiatorinqueryparameters
-      RadiatorOrderInquiry(this.radiatorinqueryparameters).then((resp) =>{this.list = resp.data.data})
+      if(this.radiatorinqueryparameters.orderid === '' || this.radiatorinqueryparameters.drawingid === '' || this.radiatorinqueryparameters.enddate === '' || this.radiatorinqueryparameters.startdate === ''){
+        ElMessageBox.alert('请输入完整条件！', '参数错误')
+      }else{RadiatorOrderInquiry(this.radiatorinqueryparameters).then((resp) =>{this.list = resp.data.data})}
+
 
     },
     exporthandler(){
@@ -163,6 +167,7 @@ export default {
       return wbout;
 
     },
+
   }
 
 }

@@ -16,8 +16,18 @@ const routes =[
     },
     {
         path: '/RadiatorOrderInquiry',
-        name: '/RadiatorOrderInquiry',
+        name: 'RadiatorOrderInquiry',
         component:() => import("@/views/radiator/RadiatorOrderInquiry.vue")
+    },
+    {
+        path:'/woodfish',
+        name:'woodfish',
+        component:() => import ('@/views/entertainment/WoodFish.vue')
+    },
+    {
+        path:'/TwoZeroFourEight',
+        name:'TwoZeroFourEight',
+        component:() => import ('@/views/entertainment/TwoZeroFourEight.vue')
     }
 ]
 
@@ -27,9 +37,10 @@ const router = createRouter({
 })
 
 router.beforeEach((to,from,next) =>{
-    if(to.href === '/login' || to.href === '/register' || to.href === '/index' || to.href === '/RadiatorOrderInquiry'){
+    if(to.href === '/login' || to.href === '/register' || to.href === '/index' || to.href === '/RadiatorOrderInquiry'  || to.href === '/woodfish' || to.href === '/TwoZeroFourEight'  ){
         next()
-    }else {
+    }
+    else {
         if (to.href != '/login' && getItem("TOKEN_INFO_KEY") === null) {
             next('/login')
 
